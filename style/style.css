@@ -3,12 +3,62 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
+body {
+  height: 1000px;
+  display: flex;
+}
+.background {
+  background-image: url("../BackGround.avif");
+  flex: 1;
+}
+.form {
+  flex: 2;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+form {
+  padding: 20px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+fieldset{
+    border: none;
+}
+.name,
+.contact,
+.password {
+  display: flex;
+  justify-content: space-between;
+}
+.name *,
+.contact *,
+.password * {
+  flex: 1;
+}
+.group {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  padding: 20px;
+}
+.group input {
+  font-size: 16px;
+}
+.group input[type="text"]:focus {
+  box-shadow: #bbb 5px 5px 5px;
+  border-color: #dd7474;
+}
+.createAccount{
+    background-color: #bbb;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
 }
-body *{
-    flex: 1;
-}
-.background{
-    background-image: url("../BackGround.avif");
+.createAccount button {
+    width: 120px;
 }
