@@ -4,12 +4,20 @@
   box-sizing: border-box;
 }
 body {
-  height: 1000px;
+  height: 900px;
   display: flex;
 }
 .background {
   background-image: url("../BackGround.avif");
-  flex: 1;
+  width: 500px;
+  height: 950px;
+}
+
+.header {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .form {
   flex: 2;
@@ -19,13 +27,13 @@ body {
 }
 form {
   padding: 20px;
-  height: 50%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-fieldset{
-    border: none;
+fieldset {
+  border: none;
 }
 .name,
 .contact,
@@ -35,7 +43,8 @@ fieldset{
 }
 .name *,
 .contact *,
-.password * {
+.password *,
+.createAccount {
   flex: 1;
 }
 .group {
@@ -45,20 +54,45 @@ fieldset{
   padding: 20px;
 }
 .group input {
+  height: 20px;
+  padding: 0;
   font-size: 16px;
 }
-.group input[type="text"]:focus {
-  box-shadow: #bbb 5px 5px 5px;
-  border-color: #dd7474;
+input:required {
+  /* border: #201919; */
+  border: 2px solid #df2020;
+  border-radius: 5px;
 }
-.createAccount{
-    background-color: #bbb;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+.group input[type="text"]:focus,
+.group input[type="password"]:focus {
+  box-shadow: #bbb 5px 5px 5px;
+  border-radius: 5px;
+  outline: none;
+}
+label {
+  text-transform: uppercase;
+}
+.confirm {
+  padding: 0 0 10px 20px;
+  box-shadow: #bbb 0px 2px 0px;
+  display: block;
+}
+.confirm::after {
+  content: "passwords is not match";
+  color: #fc0000fd;
+  opacity: 0.9;
+}
+.createAccount {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 .createAccount button {
-    width: 120px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #306d2e;
+  color: #fff;
+  font-size: 28;
 }

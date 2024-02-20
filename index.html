@@ -11,15 +11,20 @@
     <div class="background"></div>
     <div class="form">
       <div class="header">
-        <h1>
-          this is not a real online service! You know you need something like
-          this in your life to help you realize you deepest dreams. Sign up
-          <span>now</span> to get stated
-        </h1>
+        <div>
+          <h1>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize you deepest dreams.
+          </h1>
+          <h1>
+            Sign up
+            <span>now</span> to get stated
+          </h1>
+        </div>
         <h2>You <span>know</span> you want to</h2>
         <h1>let's do this!</h1>
       </div>
-      <form action="" method="post">
+      <form action="https://httpbin.org/post" method="post">
         <fieldset class="name">
           <div class="group">
             <label for="FirstName">First Name</label>
@@ -43,13 +48,19 @@
         <fieldset class="password">
           <div class="group">
             <label for="Password">Password</label
-            ><input type="text" name="Password" id="Password" />
+            ><input type="password" name="Password" id="Password" required />
           </div>
           <div class="group">
             <label for="ConfirmPassword">Confirm Password</label
-            ><input type="text" name="ConfirmPassword" id="ConfirmPassword" />
+            ><input
+              type="password"
+              name="ConfirmPassword"
+              id="ConfirmPassword"
+              required
+            />
           </div>
         </fieldset>
+        <fieldset class="confirm"><p></p></fieldset>
         <fieldset class="createAccount">
           <button type="submit">Create Account</button>
           <h3>Already have an account? Login</h3>
