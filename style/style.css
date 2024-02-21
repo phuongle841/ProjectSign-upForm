@@ -1,18 +1,63 @@
+@font-face {
+  font-family: "Odin-style";
+  src: url("../style/Norse-Bold.otf");
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: inherit;
+  /* transition: all ease 0.2s; */
 }
 body {
-  height: 900px;
+  /* transition: all ease 2s; */
   display: flex;
 }
 .background {
+  flex: 1;
   background-image: url("../BackGround.avif");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 500px;
   height: 950px;
 }
-
+.background * {
+  flex: 1;
+}
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.trans-background img {
+  width: 220px;
+}
+.logo p {
+  font-family: Odin-style;
+  font-size: 64px;
+  color: #fff;
+}
+.trans-background {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+}
+.credit {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+}
+.credit p {
+  text-align: center;
+}
+.credit a {
+  color: #fff;
+}
 .header {
   height: 300px;
   display: flex;
@@ -58,29 +103,34 @@ fieldset {
   padding: 0;
   font-size: 16px;
 }
-input:required {
-  /* border: #201919; */
-  border: 2px solid #df2020;
+input:optional {
+  border: 1px solid #d4c1c1;
   border-radius: 5px;
+}
+input:required {
+  border: 1px solid #df2020;
+  border-radius: 5px;
+}
+input:required:valid {
+  border: 1px solid #20df96;
 }
 .group input[type="text"]:focus,
 .group input[type="password"]:focus {
-  box-shadow: #bbb 5px 5px 5px;
-  border-radius: 5px;
+  border: 1px solid #206cdf;
+  box-shadow: #206cdf 2px 2px 2px;
   outline: none;
+}
+.group input[type="password"]:required:focus {
+  border: 1px solid #94aedf;
 }
 label {
   text-transform: uppercase;
 }
 .confirm {
+  color: green;
   padding: 0 0 10px 20px;
   box-shadow: #bbb 0px 2px 0px;
   display: block;
-}
-.confirm::after {
-  content: "passwords is not match";
-  color: #fc0000fd;
-  opacity: 0.9;
 }
 .createAccount {
   padding: 20px;
@@ -92,6 +142,9 @@ label {
 .createAccount button {
   padding: 10px 20px;
   border-radius: 5px;
+  outline: 2px solid #000;
+  outline-offset: 1px;
+  border: none;
   background-color: #306d2e;
   color: #fff;
   font-size: 28;

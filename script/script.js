@@ -1,13 +1,19 @@
 let Password = document.querySelector("#Password");
 let ConfirmPassword = document.querySelector("#ConfirmPassword");
-let confirm = document.querySelector("#confirm");
+let confirm = document.querySelector(".confirm>p");
 console.log(confirm);
-let password = "";
-Password.addEventListener("change", (event) => {
-  password = event.target.value;
-  console.log(event.target.value);
+var check = function () {
+  if (Password.value == ConfirmPassword.value) {
+    confirm.style.color = "green";
+    confirm.innerHTML = "matching";
+  } else {
+    confirm.style.color = "red";
+    confirm.innerHTML = "not matching";
+  }
+};
+Password.addEventListener("input", (event) => {
+  check();
 });
 ConfirmPassword.addEventListener("input", (event) => {
-  let confirmPassword = event.target.value;
-  console.log(confirmPassword.localeCompare(password));
+  check();
 });
